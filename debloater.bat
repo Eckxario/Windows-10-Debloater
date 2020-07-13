@@ -3,7 +3,7 @@ color 04
 title Debloater
 cls
 echo What do you wish to do?:
-echo Note: Please launch this bat in adminstrator mode
+echo Note: Launch this batch file in Administrator mode 
 :start
 echo   [1] Debloat
 echo   [2] Restore
@@ -16,7 +16,7 @@ echo This can be used only once!
 pause > nul
 goto start
 :debloat
-echo Okay trying to remove bloatware...
+echo Debloating...
 Powershell -Command "Get-AppxPackage *3dbuilder* | Remove-AppxPackage"
 echo [#                ]
 Powershell -Command "Get-AppxPackage *windowscommunicationsapps* | Remove-AppxPackage"
@@ -42,15 +42,16 @@ echo [###########      ]
 Powershell -Command "Get-AppxPackage *onenote* | Remove-AppxPackage"
 echo [############     ]
 Powershell -Command "Get-AppxPackage *windowsphone* | Remove-AppxPackage"
-echo [#############   ]
+echo [#############    ]
 Powershell -Command "Get-AppxPackage *bingsports* | Remove-AppxPackage"
-echo [##############  ]
+echo [##############   ]
 Powershell -Command "Get-AppxPackage *bingweather* | Remove-AppxPackage"
-echo [############### ]
+echo [###############  ]
 Powershell -Command "Get-AppxPackage *soundrecorder* | Remove-AppxPackage"
-echo [################]
-Powershell -Command "get-appxpackage *Microsoft.WindowsAlarms* | remove-appxpackage"
+echo [################ ]
+Powershell -Command "Get-AppxPackage *Microsoft.WindowsAlarms* | Remove-AppxPackage"
 echo [#################]
 echo Should be done
-echo Please note you may still see the app icons in the startmenu but they are not installed and clicking on them wont do anything
+echo Your PC will restart in 5 seconds
+SHUTDOWN -r -t 5
 pause > nul
